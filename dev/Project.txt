@@ -1,0 +1,7 @@
+Create an todoish app where you can create tree-like tasks that you can share with your team and other people,
+Or keep it by yourself.
+
+Features:
+-todo item: {title, details, status, due, created, createdBy, updated, updatedBy, childOf}
+-item actions: {edit, delete, complete, create}
+-user actions: {createPrivateRepo, createPublicRepo, invite, join, createAcc, removeAcc, editAcc}
