@@ -17,3 +17,11 @@ body {
     font-style: normal;
     color: var(--text);
 }
+
+.main {
+    background-color: aqua;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
