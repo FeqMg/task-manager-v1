@@ -3,7 +3,7 @@ import NewAccountForm from '../components/new-account/new-account-form'
 
 function NewAccount() {
     return(
-        <div>
+        <div className={style.main}>
             <NewAccountForm/>
         </div>
     )
