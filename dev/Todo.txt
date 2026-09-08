@@ -1,0 +1,8 @@
+Pages:
+-NewAccount
+-Login
+-home
+
+NewAccount:
+-form: {email, username, password, confirm}
+-buttons: {prim, sec}
