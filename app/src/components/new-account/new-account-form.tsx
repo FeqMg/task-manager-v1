@@ -1,6 +1,7 @@
 import style from './new-account-form.module.css'
 import { useState } from 'react'
 import Input from '../common/input';
+import Button from '../common/button';
 
 function NewAccountForm() {
     const [username, setUsername] = useState("");
@@ -10,6 +11,7 @@ function NewAccountForm() {
 
     return (
         <form className={style.main}>
+            <h1>New Account</h1>
             <Input
                 type='text'
                 placeholder='Username'
@@ -33,6 +35,15 @@ function NewAccountForm() {
                 placeholder='Confirm password'
                 value={confirmPassword}
                 onChange={(val) => setConfirmPassword(val)}
+            />
+            <Button
+                text='Submit'
+                type='submit'
+                onClick={() => null}
+            />
+            <Button
+                text='Back'
+                onClick={() => null}
             />
         </form>
     )
