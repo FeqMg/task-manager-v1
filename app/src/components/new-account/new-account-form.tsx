@@ -2,8 +2,14 @@ import style from './new-account-form.module.css'
 import { useState } from 'react'
 import Input from '../common/input';
 import Button from '../common/button';
+import type { NewUser } from '../../types/forms';
 
-function NewAccountForm() {
+type NewAccountForm = {
+    onSubmit: (data: NewUser) => void,
+    onBack: () => void,
+}
+
+function NewAccountForm({ onSubmit, onBack }: NewAccountForm) {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -39,11 +45,18 @@ function NewAccountForm() {
             <Button
                 text='Submit'
                 type='submit'
-                onClick={() => null}
+                onClick={() => onSubmit(
+                    {
+                        username: username,
+                        email: email,
+                        password: password,
+                        confirmPassword: confirmPassword
+                    }
+                )}
             />
             <Button
                 text='Back'
-                onClick={() => null}
+                onClick={() => onBack}
             />
         </form>
     )

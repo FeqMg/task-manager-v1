@@ -1,9 +1,11 @@
 import express, { type Request, type Response } from 'express'
+import cors from 'cors'
 
 const server = express();
 const port = 3000;
 
 server.use(express.json());
+server.use(cors({origin: 'http://localhost:5173'}));
 
 server.post('/new-user', (req: Request, res: Response) => {
     type Data = {
