@@ -5,3 +5,16 @@ Features:
 -todo item: {title, details, status, due, created, createdBy, updated, updatedBy, childOf}
 -item actions: {edit, delete, complete, create}
 -user actions: {createPrivateRepo, createPublicRepo, invite, join, createAcc, removeAcc, editAcc}
+
+TreeToDoList:
+-online
+-react / web-app
+-icon / operators 
+
+Main:
+-createAcc / useOffline
+-create project 
+-join project 
+-my projects 
+-collab projects 
+-settings / profile
