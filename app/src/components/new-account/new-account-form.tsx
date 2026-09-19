@@ -5,18 +5,25 @@ import Button from '../common/button';
 import type { NewUser } from '../../types/forms';
 
 type NewAccountForm = {
-    onSubmit: (data: NewUser) => void,
+    handleSubmit: (data: NewUser, event: React.SubmitEvent<HTMLFormElement>) => void,
     onBack: () => void,
 }
 
-function NewAccountForm({ onSubmit, onBack }: NewAccountForm) {
+function NewAccountForm({ handleSubmit, onBack }: NewAccountForm) {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
     return (
-        <form className={style.main}>
+        <form className={style.main} onSubmit={(event) => handleSubmit(
+            {
+                username: username,
+                email: email,
+                password: password,
+                confirmPassword: confirmPassword
+            }, event
+        )}>
             <h1>New Account</h1>
             <Input
                 type='text'
@@ -45,14 +52,7 @@ function NewAccountForm({ onSubmit, onBack }: NewAccountForm) {
             <Button
                 text='Submit'
                 type='submit'
-                onClick={() => onSubmit(
-                    {
-                        username: username,
-                        email: email,
-                        password: password,
-                        confirmPassword: confirmPassword
-                    }
-                )}
+                onClick={() => null}
             />
             <Button
                 text='Back'

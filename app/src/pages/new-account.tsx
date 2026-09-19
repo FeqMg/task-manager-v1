@@ -5,7 +5,8 @@ import type { NewUser } from '../types/forms'
 function NewAccount() {
     const url = import.meta.env.VITE_SERVER_URL;
 
-    async function submit(dataU: NewUser) {
+    async function submit(dataU: NewUser, event: React.SubmitEvent<HTMLFormElement>) {
+        event.preventDefault();
         try {
             const res = await fetch(`${url}new-user`, {
                 method: 'POST',
@@ -27,7 +28,7 @@ function NewAccount() {
 
     return (
         <div className={style.main}>
-            <NewAccountForm onSubmit={(data) => submit(data)} onBack={() => null} />
+            <NewAccountForm handleSubmit={(data, event) => submit(data, event)} onBack={() => null} />
         </div>
     )
 }
